@@ -5,18 +5,10 @@ matrix:
         - "3.6"
       before_script:
         - echo "Hola"
+      addons:
+        sauce_connect:
+          username: "yanahini"
+          access_key: "2d974dfe-e7c2-456e-ad52-4af1ef9531c5"
       script:
-        - pytest
-    - language: node_js
-      node_js: 
-        - "8.2.1"
-      install:
-        - npm install newman
-      before_script:
-          - node --version
-          - npm --version
-          - node_modules/.bin/newman --version
-      script:
-        - node_modules/.bin/newman run testpostman.postman_collection.json
-        
+        python test_selenium.py
      
