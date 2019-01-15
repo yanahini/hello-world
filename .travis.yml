@@ -1,8 +1,10 @@
 matrix:
   include:
     - language: python
-      python: 
+      python:
         - "3.6"
+      install:
+        - pip install selenium
       before_script:
         - echo "Hola"
       addons:
